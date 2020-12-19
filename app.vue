@@ -6,14 +6,11 @@ new Vue({
         monster_healt : 100,
         specialCompleted : true,
         healCompleted : true,
-        logs : [
-
-        ]
+        logs : []
     },
     methods : {
         start_game : function(){
             this.game_is_on = !this.game_is_on;
-            this.add_to_log({ turn : "p" , text : "Oyun Başladı"})
         },
         attack : function(){    
             var point = Math.ceil(Math.random()*10);
@@ -82,6 +79,12 @@ new Vue({
                     this.healCompleted = true;
                     this.logs = [];
                 }
+            }
+        },
+
+        logs : function(value){
+            if(value == []){
+                console.log("Boş")
             }
         }
     }
